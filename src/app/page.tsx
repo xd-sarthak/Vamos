@@ -1,4 +1,3 @@
-
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-gray-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
@@ -29,28 +28,40 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative pt-24 pb-32 overflow-hidden">
           <div className="absolute inset-0 -z-10">
-             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/20 dark:bg-indigo-500/10 rounded-full blur-3xl opacity-50" />
+             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/20 dark:bg-indigo-500/10 rounded-full blur-3xl opacity-50 animate-pulse" />
+             <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-violet-500/10 dark:bg-violet-500/5 rounded-full blur-3xl opacity-40" />
+             <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-pink-500/10 dark:bg-pink-500/5 rounded-full blur-3xl opacity-30" />
           </div>
           
           <div className="max-w-7xl mx-auto px-6 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 text-xs font-semibold mb-8 border border-indigo-100 dark:border-indigo-800/50">
               <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-              v2.0 is now live
+              v2.1 is now live
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight animate-[fadeIn_0.6s_ease-out]">
               Build faster with <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 animate-[gradient_3s_ease-in-out_infinite] bg-[length:200%_auto]">
                 Intuitive simplicity.
               </span>
             </h1>
+            <style jsx>{`
+              @keyframes gradient {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+              }
+              @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+            `}</style>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed">
               Vamos allows you to create stunning web experiences without the hassle. Focus on your ideas, while we handle the complexity.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-indigo-500/30">
+              <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full font-semibold text-lg transition-all shadow-lg shadow-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/60 hover:scale-105 active:scale-95">
                 Start Building Free
               </button>
-              <button className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700 rounded-full font-semibold text-lg transition-all">
+              <button className="w-full sm:w-auto px-8 py-4 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-700 hover:bg-white dark:hover:bg-zinc-700 rounded-full font-semibold text-lg transition-all hover:scale-105 active:scale-95 shadow-sm">
                 View Documentation
               </button>
             </div>
@@ -62,39 +73,39 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Feature 1 */}
-              <div className="p-8 rounded-2xl bg-gray-50 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-all shadow-sm hover:shadow-md group">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 hover:from-blue-100 hover:to-indigo-100 dark:hover:from-blue-900/30 dark:hover:to-indigo-900/30 border border-blue-200/50 dark:border-blue-800/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-500/20 hover:-translate-y-1 cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-blue-500/30">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Lightning Fast</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Lightning Fast</h3>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Optimized for speed. Experience near-instant load times and smooth interactions out of the box.
                 </p>
               </div>
 
               {/* Feature 2 */}
-              <div className="p-8 rounded-2xl bg-gray-50 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-all shadow-sm hover:shadow-md group">
-                <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="group p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 hover:from-purple-100 hover:to-pink-100 dark:hover:from-purple-900/30 dark:hover:to-pink-900/30 border border-purple-200/50 dark:border-purple-800/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-purple-500/30">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Fully Customizable</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Fully Customizable</h3>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Tailor every aspect of the design to match your brand. Flexible components that adapt to your needs.
                 </p>
               </div>
 
               {/* Feature 3 */}
-              <div className="p-8 rounded-2xl bg-gray-50 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 transition-all shadow-sm hover:shadow-md group">
-                <div className="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="group p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 hover:from-pink-100 hover:to-rose-100 dark:hover:from-pink-900/30 dark:hover:to-rose-900/30 border border-pink-200/50 dark:border-pink-800/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-pink-500/20 hover:-translate-y-1 cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-pink-500/30">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Secure by Default</h3>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">Secure by Default</h3>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Enterprise-grade security baked in. Your data and your users' privacy are our top priority.
                 </p>
@@ -110,10 +121,10 @@ export default function Home() {
              <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center">
               <span className="text-white font-bold text-xs">V</span>
             </div>
-            <span className="text-lg font-bold tracking-tight">Vamos</span>
+            <span className="text-lg font-bold tracking-tight">Vamos Barca</span>
           </div>
           <p className="text-sm text-zinc-500 dark:text-zinc-500">
-            © {new Date().getFullYear()} Vamos Inc. All rights reserved.
+            © {new Date().getFullYear()} Vamos Inc. All rights reserved 2020.
           </p>
           <div className="flex gap-6">
              <a href="#" className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
