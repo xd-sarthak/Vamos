@@ -121,10 +121,10 @@ export default function Home() {
              <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center">
               <span className="text-white font-bold text-xs">V</span>
             </div>
-            <span className="text-lg font-bold tracking-tight">Vamos</span>
+            <span className="text-lg font-bold tracking-tight">Vamos Barca</span>
           </div>
           <p className="text-sm text-zinc-500 dark:text-zinc-500">
-            © {new Date().getFullYear()} Vamos Inc. All rights reserved.
+            © {new Date().getFullYear()} Vamos Inc. All rights reserved 2020.
           </p>
           <div className="flex gap-6">
              <a href="#" className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
